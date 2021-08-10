@@ -1,0 +1,37 @@
+<h1>Dashboard</h1>
+<h4>Welcome, {{name}}</h4>
+<a href="/stories/add" class="red darken-1 waves-effect waves-light btn">Create Stories</a>
+{{#if stories}}
+    <table class="striped">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Status</th>
+                <th>Created</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each stories}}
+            <tr>
+                <td><a href="/stories/{{_id}}">{{title}}</a></td>
+                <td>{{stripTags (truncate desc 100)}}</td>
+                <td>{{status}}</td>
+                {{!-- calling the helper function to format the date --}}
+                {{!-- to call the function and pass the parameter via space --}}
+                <td>{{formatDate createdAt 'Do MMMM  YYYY, h:mm:ss a'}}</td>
+                <td class="flex-table"> 
+                    <a class="btn waves-effect waves-light blue darken-4" href="/stories/edit/{{_id}}" name="action"><i class="fas fa-edit"></i></a>
+                    <form action="/stories/my/{{_id}}" method="POST">
+                        <input type="hidden" name="_method" value="DELETE">
+                        <button class="btn waves-effect waves-light red darken-4"><i class="fas fa-trash"></i></button>
+                    </form>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+{{else}}
+    <p>You have not created any stories</p>
+{{/if}}

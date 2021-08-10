@@ -1,0 +1,43 @@
+<div class="row">
+    <form action="/stories/edit/{{editStories._id}}" method="POST" enctype="multipart/form-data"
+        class="col s8 offset-s2">
+        <input type="hidden" name="_method" value="PUT">
+        <h3>Recreate your stories</h3>
+        <div class="row">
+            <div class="input-field col s6">
+                <input id="title" type="text" class="validate" id="title" name="title" value="{{editStories.title}}">
+                <label for="title">Title</label>
+            </div>
+            <div class="input-field col s6">
+                <select class="darken-2-text" id="status" name="status">
+                    {{#select editStories.status}}
+                    <option value="public"> Public</option>
+                    <option value="private"> Private</option>
+                    {{/select}}
+                </select>
+                <label>Choose publish status</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <h5>Traveller Story</h5>
+                <textarea class="materialize-textarea " id="desc" name="desc">{{editStories.desc}}</textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="file-field input-field">
+                <div class="btn">
+                    <span>Upload Image</span>
+                    <input type="file" name="images" multiple>
+                </div>
+                <div class="file-path-wrapper">
+                    <input class="file-path validate" type="text" placeholder="Upload one or more files">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <input type="submit" value="Save" class="btn">
+            <a href="/dashboard" class="btn orange">Cancel</a>
+        </div>
+    </form>
+</div>

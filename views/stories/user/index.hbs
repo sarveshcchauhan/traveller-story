@@ -1,0 +1,28 @@
+<div class="row mt-30">
+    <div class="col m8 offset-m3">
+        <div class="row valign-wrapper">
+            <div class="col s2">
+                <img src="{{userDetails.profileImage}}" alt="" class="circle responsive-img">
+            </div>
+            <div class="col s10">
+                <h5 class="black-text">
+                    {{userDetails.displayName}}
+                </h5>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col m6 offset-m3">
+        <ul class="collection">
+            {{#each userStories}}
+            <li class="collection-item avatar">
+                <img src="" alt="" class="circle">
+                <span class="title">{{title}}</span>
+                <p>{{stripTags (truncate desc 50)}}</p>
+                <a href="/stories/{{_id}}" class="secondary-content"><i class="fas fa-eye"></i></a>
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+</div>

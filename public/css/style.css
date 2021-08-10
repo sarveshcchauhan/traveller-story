@@ -1,0 +1,33 @@
+p{
+    margin: 10px 0 !important; 
+}
+.login-container{
+    width:400px;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.flex-table{
+    display: flex;
+    margin-right: 10px;
+}
+
+.mt-30{
+    margin-top:30px;
+}
+
+.author{
+    font-weight:600;
+    font-style: italic;
+    font-size: 16px;
+}
+
+.stories-card{
+    height: 32.5rem;
+    max-height: 32.5rem;
+}
+
+.stories-card-content{
+    height: 216px;
+    max-height: 216px;
+}

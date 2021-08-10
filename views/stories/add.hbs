@@ -1,0 +1,39 @@
+<div class="row">
+    <form action="/stories/add" method="POST" enctype="multipart/form-data" class="col s8 offset-s2">
+        <h3>Start creating your stories</h3>
+        <div class="row">
+            <div class="input-field col s6">
+                <input id="title" type="text" class="validate" id="title" name="title">
+                <label for="title">Title</label>
+            </div>
+            <div class="input-field col s6">
+                <select class="darken-2-text" id="status" name="status">
+                    <option value="public" selected> Public</option>
+                    <option value="private"> Private</option>
+                </select>
+                <label>Choose publish status</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <h5>Traveller Story</h5>
+                <textarea class="materialize-textarea " id="desc" name="desc"></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="file-field input-field">
+                <div class="btn blue darken-3">
+                    <span>Upload Image</span>
+                    <input type="file" name="images" multiple>
+                </div>
+                <div class="file-path-wrapper">
+                    <input class="file-path validate" type="text" placeholder="Upload one or more files">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <input type="submit" value="Save" class="btn">
+            <a href="/dashboard" class="btn orange">Cancel</a>
+        </div>
+    </form>
+</div>

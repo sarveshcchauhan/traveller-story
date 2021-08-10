@@ -1,0 +1,27 @@
+<h3>Check Traveller Stories</h3>
+<div class="row">
+    {{#each stories}}
+    <div class="col s12 m4">
+        <div class="card stories-card">
+            <div class="card-image">
+                <img src="/assets/image/noimage.png" height="200px">
+                <span class="card-title"
+                    style="font-weight:500;color:#8f8f8f;text-transform: capitalize;">{{title}}</span>
+                {{{editIcon user ../user _id}}}
+            </div>
+            <div class="card-content stories-card-content" >
+                <span>Stories By:</span>
+                <div class="chip">
+                    <img src="{{user.profileImage}}" alt="Contact Person">
+                    <a href="/stories/user/{{user._id}}">{{user.displayName}}</a>
+
+                </div>
+                <p>{{stripTags (truncate desc 180)}}</p>
+            </div>
+            <div class="card-action ">
+                <a href="/stories/{{_id}}" class="btn grey">Read More</a>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</div>
